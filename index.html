@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><base href="/app/app_17eby3t28gd/"><script src="https://lf3-short.ibytedapm.com/slardar/fe/sdk-web/browser.cn.js" crossorigin="anonymous"></script><script>if(window.Slardar){Slardar("context.merge",{app_id:"app_17eby3t28gd",user_id:"",tenant_id:"4711026114",app_type:"9",arch_type:"4"});Slardar("init",{bid:"apaas_miaoda",env:"online"});Slardar("start")}</script><script>(function(e,t){e.LogAnalyticsObject=t;if(!e[t]){function c(){c.q.push(arguments)}c.q=[];e[t]=c}e[t].l=+new Date})(window,"collectEvent");var s=document.createElement("script");s.src="https://lf3-cdn-tos.bytescm.com/obj/static/log-sdk/collect/5.1/collect.js";s.crossOrigin="anonymous";s.async=true;s.onerror=function(){console.warn("Failed to load Tea script")};document.head.appendChild(s)</script><script>window.appId="app_17eby3t28gd";window.userId="";window.tenantId="4711026114";window.csrfToken="d470085eb7d7919c821027076dad933297d944fd6aecdd3391311bb9e7a1c67e";window.appEnv="runtime";globalThis.CLIENT_BASE_PATH="/app/app_17eby3t28gd";globalThis.ENVIRONMENT="online"</script><script>"use strict";var MiaodaRuntime=(()=>{var Te=Object.create;var H=Object.defineProperty;var Ae=Object.getOwnPropertyDescriptor;var Pe=Object.getOwnPropertyNames;var Be=Object.getPrototypeOf,Oe=Object.prototype.hasOwnProperty;var i=(n,e)=>H(n,"name",{value:e,configurable:!0});var U=(n,e)=>()=>(e||n((e={exports:{}}).exports,e),e.exports),Me=(n,e)=>{for(var o in e)H(n,o,{get:e[o],enumerable:!0})},q=(n,e,o,u)=>{if(e&&typeof e=="object"||typeof e=="function")for(let p of Pe(e))!Oe.call(n,p)&&p!==o&&H(n,p,{get:()=>e[p],enumerable:!(u=Ae(e,p))||u.enumerable});return n};var X=(n,e,o)=>(o=n!=null?Te(Be(n)):{},q(e||!n||!n.__esModule?H(o,"default",{value:n,enumerable:!0}):o,n)),He=n=>q(H({},"__esModule",{value:!0}),n);var Q=U((Y,D)=>{"use strict";(function(n){"use strict";function e(t,h){var r=(t&65535)+(h&65535),y=(t>>16)+(h>>16)+(r>>16);return y<<16|r&65535}i(e,"safeAdd");function o(t,h){return t<<h|t>>>32-h}i(o,"bitRotateLeft");function u(t,h,r,y,C,S){return e(o(e(e(h,t),e(y,S)),C),r)}i(u,"md5cmn");function p(t,h,r,y,C,S,A){return u(h&r|~h&y,t,h,C,S,A)}i(p,"md5ff");function m(t,h,r,y,C,S,A){return u(h&y|r&~y,t,h,C,S,A)}i(m,"md5gg");function g(t,h,r,y,C,S,A){return u(h^r^y,t,h,C,S,A)}i(g,"md5hh");function v(t,h,r,y,C,S,A){return u(r^(h|~y),t,h,C,S,A)}i(v,"md5ii");function w(t,h){t[h>>5]|=128<<h%32,t[(h+64>>>9<<4)+14]=h;var r,y,C,S,A,a=1732584193,s=-271733879,c=-1732584194,l=271733878;for(r=0;r<t.length;r+=16)y=a,C=s,S=c,A=l,a=p(a,s,c,l,t[r],7,-680876936),l=p(l,a,s,c,t[r+1],12,-389564586),c=p(c,l,a,s,t[r+2],17,606105819),s=p(s,c,l,a,t[r+3],22,-1044525330),a=p(a,s,c,l,t[r+4],7,-176418897),l=p(l,a,s,c,t[r+5],12,1200080426),c=p(c,l,a,s,t[r+6],17,-1473231341),s=p(s,c,l,a,t[r+7],22,-45705983),a=p(a,s,c,l,t[r+8],7,1770035416),l=p(l,a,s,c,t[r+9],12,-1958414417),c=p(c,l,a,s,t[r+10],17,-42063),s=p(s,c,l,a,t[r+11],22,-1990404162),a=p(a,s,c,l,t[r+12],7,1804603682),l=p(l,a,s,c,t[r+13],12,-40341101),c=p(c,l,a,s,t[r+14],17,-1502002290),s=p(s,c,l,a,t[r+15],22,1236535329),a=m(a,s,c,l,t[r+1],5,-165796510),l=m(l,a,s,c,t[r+6],9,-1069501632),c=m(c,l,a,s,t[r+11],14,643717713),s=m(s,c,l,a,t[r],20,-373897302),a=m(a,s,c,l,t[r+5],5,-701558691),l=m(l,a,s,c,t[r+10],9,38016083),c=m(c,l,a,s,t[r+15],14,-660478335),s=m(s,c,l,a,t[r+4],20,-405537848),a=m(a,s,c,l,t[r+9],5,568446438),l=m(l,a,s,c,t[r+14],9,-1019803690),c=m(c,l,a,s,t[r+3],14,-187363961),s=m(s,c,l,a,t[r+8],20,1163531501),a=m(a,s,c,l,t[r+13],5,-1444681467),l=m(l,a,s,c,t[r+2],9,-51403784),c=m(c,l,a,s,t[r+7],14,1735328473),s=m(s,c,l,a,t[r+12],20,-1926607734),a=g(a,s,c,l,t[r+5],4,-378558),l=g(l,a,s,c,t[r+8],11,-2022574463),c=g(c,l,a,s,t[r+11],16,1839030562),s=g(s,c,l,a,t[r+14],23,-35309556),a=g(a,s,c,l,t[r+1],4,-1530992060),l=g(l,a,s,c,t[r+4],11,1272893353),c=g(c,l,a,s,t[r+7],16,-155497632),s=g(s,c,l,a,t[r+10],23,-1094730640),a=g(a,s,c,l,t[r+13],4,681279174),l=g(l,a,s,c,t[r],11,-358537222),c=g(c,l,a,s,t[r+3],16,-722521979),s=g(s,c,l,a,t[r+6],23,76029189),a=g(a,s,c,l,t[r+9],4,-640364487),l=g(l,a,s,c,t[r+12],11,-421815835),c=g(c,l,a,s,t[r+15],16,530742520),s=g(s,c,l,a,t[r+2],23,-995338651),a=v(a,s,c,l,t[r],6,-198630844),l=v(l,a,s,c,t[r+7],10,1126891415),c=v(c,l,a,s,t[r+14],15,-1416354905),s=v(s,c,l,a,t[r+5],21,-57434055),a=v(a,s,c,l,t[r+12],6,1700485571),l=v(l,a,s,c,t[r+3],10,-1894986606),c=v(c,l,a,s,t[r+10],15,-1051523),s=v(s,c,l,a,t[r+1],21,-2054922799),a=v(a,s,c,l,t[r+8],6,1873313359),l=v(l,a,s,c,t[r+15],10,-30611744),c=v(c,l,a,s,t[r+6],15,-1560198380),s=v(s,c,l,a,t[r+13],21,1309151649),a=v(a,s,c,l,t[r+4],6,-145523070),l=v(l,a,s,c,t[r+11],10,-1120210379),c=v(c,l,a,s,t[r+2],15,718787259),s=v(s,c,l,a,t[r+9],21,-343485551),a=e(a,y),s=e(s,C),c=e(c,S),l=e(l,A);return[a,s,c,l]}i(w,"binlMD5");function T(t){var h,r="",y=t.length*32;for(h=0;h<y;h+=8)r+=String.fromCharCode(t[h>>5]>>>h%32&255);return r}i(T,"binl2rstr");function x(t){var h,r=[];for(r[(t.length>>2)-1]=void 0,h=0;h<r.length;h+=1)r[h]=0;var y=t.length*8;for(h=0;h<y;h+=8)r[h>>5]|=(t.charCodeAt(h/8)&255)<<h%32;return r}i(x,"rstr2binl");function L(t){return T(w(x(t),t.length*8))}i(L,"rstrMD5");function E(t,h){var r,y=x(t),C=[],S=[],A;for(C[15]=S[15]=void 0,y.length>16&&(y=w(y,t.length*8)),r=0;r<16;r+=1)C[r]=y[r]^909522486,S[r]=y[r]^1549556828;return A=w(C.concat(x(h)),512+h.length*8),T(w(S.concat(A),640))}i(E,"rstrHMACMD5");function P(t){var h="0123456789abcdef",r="",y,C;for(C=0;C<t.length;C+=1)y=t.charCodeAt(C),r+=h.charAt(y>>>4&15)+h.charAt(y&15);return r}i(P,"rstr2hex");function I(t){return unescape(encodeURIComponent(t))}i(I,"str2rstrUTF8");function d(t){return L(I(t))}i(d,"rawMD5");function f(t){return P(d(t))}i(f,"hexMD5");function _(t,h){return E(I(t),I(h))}i(_,"rawHMACMD5");function b(t,h){return P(_(t,h))}i(b,"hexHMACMD5");function k(t,h,r){return h?r?_(h,t):b(h,t):r?d(t):f(t)}i(k,"md5"),typeof define=="function"&&define.amd?define(function(){return k}):typeof D=="object"&&D.exports?D.exports=k:n.md5=k})(Y)});var te=U((R,ee)=>{"use strict";(function(n,e){typeof R=="object"?ee.exports=R=e():typeof define=="function"&&define.amd?define([],e):n.CryptoJS=e()})(R,function(){var n=n||(function(e,o){var u=Object.create||(function(){function d(){}return i(d,"F"),function(f){var _;return d.prototype=f,_=new d,d.prototype=null,_}})(),p={},m=p.lib={},g=m.Base=(function(){return{extend:i(function(d){var f=u(this);return d&&f.mixIn(d),(!f.hasOwnProperty("init")||this.init===f.init)&&(f.init=function(){f.$super.init.apply(this,arguments)}),f.init.prototype=f,f.$super=this,f},"extend"),create:i(function(){var d=this.extend();return d.init.apply(d,arguments),d},"create"),init:i(function(){},"init"),mixIn:i(function(d){for(var f in d)d.hasOwnProperty(f)&&(this[f]=d[f]);d.hasOwnProperty("toString")&&(this.toString=d.toString)},"mixIn"),clone:i(function(){return this.init.prototype.extend(this)},"clone")}})(),v=m.WordArray=g.extend({init:i(function(d,f){d=this.words=d||[],f!=o?this.sigBytes=f:this.sigBytes=d.length*4},"init"),toString:i(function(d){return(d||T).stringify(this)},"toString"),concat:i(function(d){var f=this.words,_=d.words,b=this.sigBytes,k=d.sigBytes;if(this.clamp(),b%4)for(var t=0;t<k;t++){var h=_[t>>>2]>>>24-t%4*8&255;f[b+t>>>2]|=h<<24-(b+t)%4*8}else for(var t=0;t<k;t+=4)f[b+t>>>2]=_[t>>>2];return this.sigBytes+=k,this},"concat"),clamp:i(function(){var d=this.words,f=this.sigBytes;d[f>>>2]&=4294967295<<32-f%4*8,d.length=e.ceil(f/4)},"clamp"),clone:i(function(){var d=g.clone.call(this);return d.words=this.words.slice(0),d},"clone"),random:i(function(d){for(var f=[],_=i(function(r){var r=r,y=987654321,C=4294967295;return function(){y=36969*(y&65535)+(y>>16)&C,r=18e3*(r&65535)+(r>>16)&C;var S=(y<<16)+r&C;return S/=4294967296,S+=.5,S*(e.random()>.5?1:-1)}},"r"),b=0,k;b<d;b+=4){var t=_((k||e.random())*4294967296);k=t()*987654071,f.push(t()*4294967296|0)}return new v.init(f,d)},"random")}),w=p.enc={},T=w.Hex={stringify:i(function(d){for(var f=d.words,_=d.sigBytes,b=[],k=0;k<_;k++){var t=f[k>>>2]>>>24-k%4*8&255;b.push((t>>>4).toString(16)),b.push((t&15).toString(16))}return b.join("")},"stringify"),parse:i(function(d){for(var f=d.length,_=[],b=0;b<f;b+=2)_[b>>>3]|=parseInt(d.substr(b,2),16)<<24-b%8*4;return new v.init(_,f/2)},"parse")},x=w.Latin1={stringify:i(function(d){for(var f=d.words,_=d.sigBytes,b=[],k=0;k<_;k++){var t=f[k>>>2]>>>24-k%4*8&255;b.push(String.fromCharCode(t))}return b.join("")},"stringify"),parse:i(function(d){for(var f=d.length,_=[],b=0;b<f;b++)_[b>>>2]|=(d.charCodeAt(b)&255)<<24-b%4*8;return new v.init(_,f)},"parse")},L=w.Utf8={stringify:i(function(d){try{return decodeURIComponent(escape(x.stringify(d)))}catch{throw new Error("Malformed UTF-8 data")}},"stringify"),parse:i(function(d){return x.parse(unescape(encodeURIComponent(d)))},"parse")},E=m.BufferedBlockAlgorithm=g.extend({reset:i(function(){this._data=new v.init,this._nDataBytes=0},"reset"),_append:i(function(d){typeof d=="string"&&(d=L.parse(d)),this._data.concat(d),this._nDataBytes+=d.sigBytes},"_append"),_process:i(function(d){var f=this._data,_=f.words,b=f.sigBytes,k=this.blockSize,t=k*4,h=b/t;d?h=e.ceil(h):h=e.max((h|0)-this._minBufferSize,0);var r=h*k,y=e.min(r*4,b);if(r){for(var C=0;C<r;C+=k)this._doProcessBlock(_,C);var S=_.splice(0,r);f.sigBytes-=y}return new v.init(S,y)},"_process"),clone:i(function(){var d=g.clone.call(this);return d._data=this._data.clone(),d},"clone"),_minBufferSize:0}),P=m.Hasher=E.extend({cfg:g.extend(),init:i(function(d){this.cfg=this.cfg.extend(d),this.reset()},"init"),reset:i(function(){E.reset.call(this),this._doReset()},"reset"),update:i(function(d){return this._append(d),this._process(),this},"update"),finalize:i(function(d){d&&this._append(d);var f=this._doFinalize();return f},"finalize"),blockSize:512/32,_createHelper:i(function(d){return function(f,_){return new d.init(_).finalize(f)}},"_createHelper"),_createHmacHelper:i(function(d){return function(f,_){return new I.HMAC.init(d,_).finalize(f)}},"_createHmacHelper")}),I=p.algo={};return p})(Math);return n})});var re=U((F,ne)=>{"use strict";(function(n,e){typeof F=="object"?ne.exports=F=e(te()):typeof define=="function"&&define.amd?define(["./core"],e):e(n.CryptoJS)})(F,function(n){return(function(){var e=n,o=e.lib,u=o.WordArray,p=o.Hasher,m=e.algo,g=[],v=m.SHA1=p.extend({_doReset:i(function(){this._hash=new u.init([1732584193,4023233417,2562383102,271733878,3285377520])},"_doReset"),_doProcessBlock:i(function(w,T){for(var x=this._hash.words,L=x[0],E=x[1],P=x[2],I=x[3],d=x[4],f=0;f<80;f++){if(f<16)g[f]=w[T+f]|0;else{var _=g[f-3]^g[f-8]^g[f-14]^g[f-16];g[f]=_<<1|_>>>31}var b=(L<<5|L>>>27)+d+g[f];f<20?b+=(E&P|~E&I)+1518500249:f<40?b+=(E^P^I)+1859775393:f<60?b+=(E&P|E&I|P&I)-1894007588:b+=(E^P^I)-899497514,d=I,I=P,P=E<<30|E>>>2,E=L,L=b}x[0]=x[0]+L|0,x[1]=x[1]+E|0,x[2]=x[2]+P|0,x[3]=x[3]+I|0,x[4]=x[4]+d|0},"_doProcessBlock"),_doFinalize:i(function(){var w=this._data,T=w.words,x=this._nDataBytes*8,L=w.sigBytes*8;return T[L>>>5]|=128<<24-L%32,T[(L+64>>>9<<4)+14]=Math.floor(x/4294967296),T[(L+64>>>9<<4)+15]=x,w.sigBytes=T.length*4,this._process(),this._hash},"_doFinalize"),clone:i(function(){var w=p.clone.call(this);return w._hash=this._hash.clone(),w},"clone")});e.SHA1=p._createHelper(v),e.HmacSHA1=p._createHmacHelper(v)})(),n.SHA1})});var ut={};Me(ut,{TrackKey:()=>z,name:()=>dt,reportTeaEvent:()=>G,version:()=>lt});var le=X(Q(),1),de=X(re(),1);function B(){return window.appId||null}i(B,"getAppId");function ie(){var o;let n="suda-csrf-token",e=document.cookie.split("; ");for(let u of e){let[p,m]=u.split("=");if(p===n)return decodeURIComponent(m)}return(o=window.csrfToken)!=null?o:null}i(ie,"getCsrfToken");function N(){let n=globalThis.CLIENT_BASE_PATH||"/";return/^\/app\/[^/]/.test(n)}i(N,"isNewPathEnabled");function $(){switch(globalThis.ENVIRONMENT){case"gray":return"PRE";case"online":return"ONLINE";default:return"BOE"}}i($,"getEnv");function oe(){return window.appEnv!=null?window.appEnv==="runtime":!0}i(oe,"isOnlineEnv");function W(){let n=navigator.userAgent,e=/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i.test(n),o=/iPad|Tab|Tablet/i.test(n)&&navigator.maxTouchPoints>1;return e||o}i(W,"isMobile");async function ae(){var n,e,o;try{let u=B();if(!u)return!0;let p=N()?`/app/${u}/__runtime__/api/v1/studio/get_published`:`/spark/b/${u}/get_published`,g=await(await fetch(p,{headers:{"X-Suda-Csrf-Token":(n=ie())!=null?n:""}})).json();if(g.code===0||g.status_code==="0")return((o=(e=g.data)==null?void 0:e.app_info)==null?void 0:o.show_badge)!==!1}catch{}return!0}i(ae,"fetchShowBadge");async function se(){var u;let n=B();if(!n)return{code:1,msg:"appId is required",data:{}};let e=N()?`/app/${n}/__runtime__/api/v1/studio/lark/user_info`:`/spark/b/${n}/lark/user_info`;return await(await fetch(e,{headers:{"X-Suda-Csrf-Token":(u=ie())!=null?u:""}})).json()}i(se,"getLarkUserInfo");var z={VIEW:"aily_agent_artifact_page_view"},De="08a441",Re="42b91e";function ce(n){let e=String(n);return(0,de.default)(De+(0,le.default)(e+Re)).toString()}i(ce,"encryptTea");var V=!1;async function Fe(){var m,g,v,w;let{data:n}=await se(),{tenantID:e,userID:o}=n||{},u=o&&o!=="0"?ce(o):void 0,p=e&&e!=="0"?ce(e):void 0;(m=window.collectEvent)==null||m.call(window,"init",{app_id:788827,channel:"cn",disable_auto_pv:!1,enable_ab_test:!1,enable_debug:!1,enable_stay_duration:!0,reportTime:1e3}),(v=window.collectEvent)==null||v.call(window,"config",{user_unique_id:u,device_type:W()?"mobile":"pc",evtParams:{open_from:(g=new URLSearchParams(window.location.search).get("open-from"))!=null?g:void 0,env:$(),user_id:u,tenant_id:p}}),V=!0,(w=window.collectEvent)==null||w.call(window,"start")}i(Fe,"createTracker");async function G({trackKey:n,trackParams:e={}}){var o;try{V||(V=!0,await Fe()),(o=window.collectEvent)==null||o.call(window,n,e)}catch(u){console.error(u)}}i(G,"reportTeaEvent");function ue(){return G({trackKey:z.VIEW,trackParams:{artifact_uid:B(),agent_id:"agent_miaoda",url:window.location.href}})}i(ue,"reportPageView");function fe(){if(typeof crypto!="undefined"&&crypto.getRandomValues){let e=new Uint8Array(8);return crypto.getRandomValues(e),Array.from(e).map(o=>o.toString(16).padStart(2,"0")).join("")}let n="";for(let e=0;e<16;e++)n+=Math.floor(Math.random()*16).toString(16);return n}i(fe,"generateUUID");var pe="x_sdk_device_id";function Ne(){try{let n=localStorage.getItem(pe);return n||(n=fe(),localStorage.setItem(pe,n)),n}catch{return fe()}}i(Ne,"getDeviceId");function $e(){let n=typeof navigator!="undefined"?navigator.userAgent:"";return n&&(/Android/i.test(n)&&/Mobile/i.test(n)||/iPhone|iPod/i.test(n)||/BlackBerry|IEMobile|Opera Mini/i.test(n))?"mobile":"desktop"}i($e,"getDeviceType");var We="pageSessionID";function je(){try{return new URLSearchParams(window.location.search).get(We)||""}catch{return""}}i(je,"getPvId");function Ue(n={}){let e=n.pvId||je();return{app_id:window.appId||"",tenant_id:window.tenantId||"",user_id:window.userId||"",did:Ne(),module:"app_web",app_env:"runtime",source_type:"user",device_type:$e(),release_commit_id:window.__RELEASE_COMMIT_ID__||"",...e?{pv_id:e}:{}}}i(Ue,"getDefaultAttributes");function he(n){let e=Math.round(n);if(!Number.isFinite(e))throw new RangeError(`toNanoString: \u975E\u6CD5\u65F6\u95F4\u6233 ${n}`);return typeof BigInt!="function"?e===0?"0":`${e}000000`:String(BigInt(e)*BigInt(1e6))}i(he,"toNanoString");var Ve="1.0.2";function ze(n,e){let o=Ue(e),u=he(Date.now());return{metricsData:{resource:{attributes:{sdk_version:Ve,sdk_lang:"javascript",sdk_type:"client-frontend"}},metrics:[{name:"apaas_internal_metrics_pv_uv",description:"Count of page views",unit:"",scopeName:"apaas_internal_metrics_pv_uv",sum:{aggregationTemporality:1,isMonotonic:!0,dataPoints:n.map(p=>({attributes:{...o,url:p.url,path:p.path,referrer:p.referrer},startTimeUnixNano:he(p.timestampMs),timeUnixNano:u,asDouble:1}))}}]}}}i(ze,"buildPayload");function Ge(n,e,o={},u){if(e.length===0)return;let p;try{p=JSON.stringify(ze(e,u))}catch{return}try{fetch(n,{method:"POST",headers:{"Content-Type":"application/json","X-Suda-Csrf-Token":window.csrfToken||"",...o},body:p,keepalive:!0}).catch(()=>{})}catch{}}i(Ge,"sendPvData");var K="__APAAS_PV_TRACKER_STARTED__";function Ke(){try{let n=window;return n[K]?!1:(n[K]=!0,!0)}catch{return!0}}i(Ke,"claimPvReporting");function me(){try{window[K]=!1}catch{}}i(me,"releasePvReporting");var O,Ze=(O=class{constructor(){this.started=!1,this.disposers=[],this.holdsPvReporting=!1,this.buffer=[]}static get instance(){return this._instance||(this._instance=new O),this._instance}start(e){var o;if(!this.started&&Ke()){this.holdsPvReporting=!0,this.config=e,this.started=!0;try{this.listenRouteChanges(),this.registerLifecycleListeners();let u=(o=e.flushIntervalMs)!=null?o:1e4;this.flushTimer=setInterval(()=>this.flush(),u)}catch(u){throw this.started=!1,this.flushTimer&&(clearInterval(this.flushTimer),this.flushTimer=void 0),this.holdsPvReporting=!1,me(),u}}}shutdown(){this.flush(),this.flushTimer&&(clearInterval(this.flushTimer),this.flushTimer=void 0),this.firstFlushTimer&&(clearTimeout(this.firstFlushTimer),this.firstFlushTimer=void 0),this.started=!1;for(let e of this.disposers.splice(0))try{e()}catch{}this.holdsPvReporting&&(this.holdsPvReporting=!1,me())}pageKey(){let{origin:e,pathname:o,search:u}=window.location;return`${e}${o}${u}`}scheduleFirstFlush(){var e;let o=(e=this.config)==null?void 0:e.firstFlushDelayMs;o==null||this.firstFlushTimer||(this.firstFlushTimer=setTimeout(()=>this.flush(),o))}recordPv(){let e=this.pageKey();this.lastKey!==e&&(this.lastKey=e,this.buffer.push({url:window.location.href,path:window.location.pathname,referrer:document.referrer,timestampMs:Date.now()}),this.scheduleFirstFlush())}flush(){if(!this.config||this.buffer.length===0)return;let e=this.buffer.splice(0);Ge(this.config.collectorUrl,e,this.config.headers,{pvId:this.config.pvId})}listenRouteChanges(){this.recordPv();let e=i(()=>this.recordPv(),"onPopState");window.addEventListener("popstate",e),this.disposers.push(()=>window.removeEventListener("popstate",e)),this.patchHistory("pushState"),this.patchHistory("replaceState")}patchHistory(e){let o=history[e],u=i(()=>this.recordPv(),"recordPv");history[e]=function(...p){let m=o.apply(this,p);return u(),m},this.disposers.push(()=>{history[e]=o})}registerLifecycleListeners(){let e=i(()=>{document.visibilityState==="hidden"&&this.flush()},"onVisibilityChange");document.addEventListener("visibilitychange",e),this.disposers.push(()=>document.removeEventListener("visibilitychange",e));let o=i(()=>this.flush(),"onPageHide");window.addEventListener("pagehide",o),this.disposers.push(()=>window.removeEventListener("pagehide",o))}},i(O,"_PvTracker"),O),ge=Ze.instance;function ve(){var o;let n=(o=B())!=null?o:"",e=N()?`/app/${n}/__runtime__/api/v1/observability/metrics/collect`:`/spark/app/${n}/runtime/api/v1/observability/metrics/collect`;ge.start({collectorUrl:e})}i(ve,"initPvTracking");var ye="https://lf3-static.bytednsdoc.com/obj/eden-cn/LMfspH/ljhwZthlaukjlkulzlp",Je=`${ye}/miaoda-ui/doubao.svg`,qe=`${ye}/logo/miaodalogo.svg`,we='<svg viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.08312 8.08298C8.2384 7.92769 8.23953 7.67705 8.08424 7.52176L5.3625 4.80002L8.08422 2.07829C8.23951 1.92301 8.23839 1.67236 8.0831 1.51708C7.92781 1.36179 7.67717 1.36066 7.52188 1.51595C7.36659 1.67124 4.80016 4.23767 4.80016 4.23767L2.07841 1.51593C1.92313 1.36064 1.67248 1.36177 1.5172 1.51705C1.36191 1.67234 1.36078 1.92298 1.51607 2.07827L4.23782 4.80002L1.51605 7.52178C1.36076 7.67707 1.36189 7.92771 1.51718 8.083C1.67246 8.23829 1.92311 8.23941 2.07839 8.08412L4.80016 5.36236L7.5219 8.0841C7.67719 8.23939 7.92783 8.23826 8.08312 8.08298Z" fill="currentColor"/></svg>',Xe='<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.6667 2H3.33333V14H6.66667V15.3334H3.33333C2.59695 15.3334 2 14.7364 2 14V2C2 1.26364 2.59695 0.666687 3.33333 0.666687H12.6667C13.403 0.666687 14 1.26364 14 2V7.33335H12.6667V2Z" fill="currentColor"/><path d="M5.33333 4.66669C4.96514 4.66669 4.66667 4.96516 4.66667 5.33335C4.66667 5.70154 4.96514 6 5.33333 6H10.6667C11.0349 6 11.3333 5.70154 11.3333 5.33335C11.3333 4.96516 11.0349 4.66669 10.6667 4.66669H5.33333Z" fill="currentColor"/><path d="M4.66667 8.33335C4.66667 7.96516 4.96514 7.66669 5.33333 7.66669H8C8.36819 7.66669 8.66667 7.96516 8.66667 8.33335C8.66667 8.70154 8.36819 9 8 9H5.33333C4.96514 9 4.66667 8.70154 4.66667 8.33335Z" fill="currentColor"/><path d="M13.5523 8.70017C13.9428 8.30964 14.576 8.30964 14.9665 8.70017C15.357 9.09069 15.357 9.72386 14.9665 10.1144L14.2594 10.8215L12.8452 9.40728L13.5523 8.70017Z" fill="currentColor"/><path d="M12.1381 10.1144L13.5523 11.5286L10.2309 14.85C10.0916 14.9892 9.91229 15.0815 9.71798 15.1138L8.45737 15.3234C8.42136 15.3294 8.38467 15.3177 8.35885 15.2918C8.33271 15.2657 8.32099 15.2284 8.32749 15.192L8.55128 13.9374C8.58465 13.7502 8.6746 13.5779 8.80901 13.4435L12.1381 10.1144Z" fill="currentColor"/></svg>',Ye='<svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.9922 1.99221C12.5445 1.98895 12.9958 2.43407 12.999 2.98634L13.0762 16.1943L14.6387 14.6328L17.8926 11.3789C18.2831 10.9884 18.9171 10.9885 19.3076 11.3789C19.6977 11.7695 19.6979 12.4026 19.3076 12.793L16.0527 16.0479L12.7979 19.3018C12.7111 19.3884 12.6098 19.4566 12.5 19.5059H20.375C20.9271 19.5059 21.3748 19.9538 21.375 20.5059C21.375 21.0581 20.9273 21.5059 20.375 21.5059H3.625C3.07272 21.5059 2.625 21.0581 2.625 20.5059C2.62523 19.9538 3.07286 19.5059 3.625 19.5059H11.6816C11.572 19.4566 11.4704 19.3884 11.3838 19.3018L4.87402 12.793C4.48372 12.4026 4.4839 11.7694 4.87402 11.3789C5.26452 10.9884 5.89756 10.9885 6.28809 11.3789L11.0762 16.166L10.999 2.99806C10.9958 2.44603 11.4402 1.99582 11.9922 1.99221Z" fill="currentColor"/></svg>',Qe='<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.0754 7.57153C2.23188 9.44922 3.49231 11.053 5.27982 11.6488C5.31351 11.6601 5.33994 11.6865 5.35117 11.7202L5.72076 12.8289C5.88752 13.3292 6.3557 13.6667 6.88304 13.6667H9.11696C9.6443 13.6667 10.1125 13.3292 10.2792 12.8289L10.6488 11.7202C10.6601 11.6865 10.6865 11.6601 10.7202 11.6488C12.5077 11.053 13.7681 9.44922 13.9246 7.57153L14 6.66667C14 3.35296 11.3137 0.666668 8 0.666668C4.68629 0.666668 2 3.35296 2 6.66667L2.0754 7.57153ZM9.38392 11.2985L9.03899 12.3333H6.96101L6.61608 11.2985C6.47214 10.8667 6.13328 10.5279 5.70146 10.3839C4.41995 9.95675 3.51631 8.80696 3.40413 7.4608L3.33362 6.61462C3.36152 4.06127 5.44004 2 8 2C10.56 2 12.6385 4.06127 12.6664 6.61462L12.5959 7.4608C12.4837 8.80696 11.5801 9.95675 10.2985 10.3839C9.86672 10.5279 9.52786 10.8667 9.38392 11.2985Z" fill="currentColor"/><path d="M6.66667 14.3333C6.29848 14.3333 6 14.6318 6 15C6 15.3682 6.29848 15.6667 6.66667 15.6667H9.33333C9.70152 15.6667 10 15.3682 10 15C10 14.6318 9.70152 14.3333 9.33333 14.3333H6.66667Z" fill="currentColor"/><path d="M8.00864 4.13208L5.44578 6.94049C5.20258 7.18228 5.37835 7.56531 5.74361 7.58951L7.2181 7.6872L7.21814 9.60852C7.21814 9.96788 7.72139 10.1366 7.99168 9.86792C8.26197 9.59921 10.5545 7.05951 10.5545 7.05951C10.7977 6.81772 10.622 6.43469 10.2567 6.41049L8.78222 6.3128L8.78219 4.39148C8.78218 4.03212 8.27893 3.86336 8.00864 4.13208Z" fill="currentColor"/></svg>',_e=!0,et="0px 8px 32px rgba(0,0,0,0.08), 0px 4px 16px rgba(0,0,0,0.04), 0px 2px 4px rgba(0,0,0,0.02)",tt="0px 4px 16px rgba(0,0,0,0.03), 0px 4px 10px rgba(0,0,0,0.03), 0px 2px 4px rgba(0,0,0,0.02)",J="'PingFang SC', -apple-system, BlinkMacSystemFont, sans-serif",j={doubao:{brandText:"\u8C46\u5305\u5DE5\u4F5C\u751F\u6210",logoSrc:Je,downloadUrl:"https://ugapk.com/FCtLH"},miaoda:{brandText:"\u5999\u642D\u751F\u6210",logoSrc:qe,landingUrl:"https://miaoda.feishu.cn/landing"}},nt={BOE:"tns.feishu-boe.cn",PRE:"tns.feishu-pre.cn",ONLINE:"tns.feishu.cn"};function Ce(){var o;let n=JSON.stringify({scene:"miaoda_app_report",entity_id:(o=B())!=null?o:"",entity_type:"miaoda_app",extra:""}),e=`https://${nt[$()]}/cust/lark_report/?type=common&params=${encodeURIComponent(n)}&lang=zh-CN`;window.open(e,"_blank","noopener,noreferrer")}i(Ce,"openReport");var rt={feedback:Xe,close:we,download:Ye,efficiency:Qe};function xe(n){let e=document.createElement("span");Object.assign(e.style,{display:"inline-flex",width:`${n}px`,height:`${n}px`,flexShrink:"0"}),e.innerHTML=we;let o=e.firstElementChild;return o&&(o.setAttribute("width",String(n)),o.setAttribute("height",String(n)),o.style.display="block"),e}i(xe,"makeCloseIcon");function it(n,e=16){if(n==="close")return xe(e);let o=document.createElement("span");Object.assign(o.style,{display:"inline-flex",width:`${e}px`,height:`${e}px`,flexShrink:"0"}),o.innerHTML=rt[n];let u=o.firstElementChild;return u&&(u.style.display="block"),o}i(it,"makeIcon");function ot(n,e){let o=document.createElement("img");return o.src=n,o.width=e,o.height=e,o.alt="",Object.assign(o.style,{width:`${e}px`,height:`${e}px`,maxWidth:"none",maxHeight:"none",borderRadius:"100px",flexShrink:"0",display:"block"}),o}i(ot,"makeLogo");function ke(n,e,o){let u=e==="desktop",p=j[n],m=document.createElement("div");Object.assign(m.style,{boxSizing:"border-box",display:"inline-flex",alignItems:"center",gap:"4px",padding:u?"6px 12px 6px 8px":"5px 12px 5px 8px",background:"#363636",border:"0.5px solid rgba(255,255,255,0.1)",borderRadius:"100px",boxShadow:et,cursor:"pointer"});let g=ot(p.logoSrc,16),v=document.createElement("span");if(v.textContent=p.brandText,Object.assign(v.style,{fontFamily:J,fontSize:u?"12px":"14px",lineHeight:u?"18px":"22px",color:"rgba(255,255,255,0.85)",whiteSpace:"nowrap"}),m.append(g,v),u&&o){let w=document.createElement("span");w.setAttribute("role","button"),w.setAttribute("aria-label","\u5173\u95ED"),w.setAttribute("data-watermark-close",""),Object.assign(w.style,{display:"none",alignItems:"center",cursor:"pointer",flexShrink:"0",color:"rgba(255,255,255,0.5)"}),w.appendChild(xe(10)),w.addEventListener("click",T=>{T.stopPropagation(),o()}),m.appendChild(w)}return m}i(ke,"buildPill");function M(n){let e=document.createElement("div");e.setAttribute("role","menuitem"),e.setAttribute("data-label",n.label),Object.assign(e.style,{boxSizing:"border-box",display:"flex",alignItems:"center",gap:"8px",minHeight:"38px",padding:"4px 10px",borderRadius:"6px",cursor:"pointer",color:"#000000"});let o=document.createElement("span");Object.assign(o.style,{display:"inline-flex",width:"16px",height:"16px",flexShrink:"0",color:"#000000"}),o.appendChild(it(n.icon));let u=document.createElement("span");return u.textContent=n.label,Object.assign(u.style,{fontFamily:J,fontSize:`${n.fontSize}px`,lineHeight:`${n.fontSize+8}px`,color:"#000000",whiteSpace:"nowrap"}),e.append(o,u),e.addEventListener("mouseenter",()=>{e.style.background="rgba(0,0,0,0.04)"}),e.addEventListener("mouseleave",()=>{e.style.background="transparent"}),e.addEventListener("click",n.onClick),e}i(M,"buildMenuRow");function at(){let n=document.createElement("div");return Object.assign(n.style,{height:"1px",background:"rgba(0,0,0,0.08)",margin:"0 10px"}),n}i(at,"buildDivider");function Se(n){var o;let e=document.createElement("div");if(Object.assign(e.style,{boxSizing:"border-box",display:"flex",flexDirection:"column",minWidth:`${n.minWidth}px`,background:"#ffffff",border:"0.5px solid rgba(0,0,0,0.1)",borderRadius:"10px",boxShadow:tt,overflow:"hidden",outline:"none"}),n.items.length){let u=document.createElement("div");Object.assign(u.style,{boxSizing:"border-box",padding:"4px",display:"flex",flexDirection:"column",gap:`${(o=n.itemGap)!=null?o:0}px`}),n.items.forEach(p=>u.appendChild(p)),e.appendChild(u)}if(n.extraItems&&n.extraItems.length){e.appendChild(at());let u=document.createElement("div");Object.assign(u.style,{boxSizing:"border-box",padding:"4px"}),n.extraItems.forEach(p=>u.appendChild(p)),e.appendChild(u)}return e}i(Se,"buildMenuCard");function Ee(n,e=!1){let o=document.createElement("div");o.setAttribute("data-custom-element",`${n}-watermark${e?"-mobile":""}`);let u=o.attachShadow({mode:"open"}),p=document.createElement("style");p.textContent=`
+    :host {
+      all: initial !important;
+      display: block !important;
+      position: fixed !important;
+      right: 12px !important;
+      bottom: 12px !important;
+      z-index: 9999 !important;
+      direction: ltr !important;
+      unicode-bidi: isolate !important;
+    }
+    :host::before, :host::after { content: none !important; }
+    .watermark-root {
+      all: initial;
+      direction: ltr;
+      unicode-bidi: isolate;
+      font-family: ${J};
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 8px;
+    }
+  `;let m=document.createElement("div");return m.className="watermark-root",u.append(p,m),{host:o,container:m}}i(Ee,"createWatermarkRoot");function st(n){let{host:e,container:o}=Ee(n),u=[];n==="doubao"?u.push(M({icon:"download",label:"\u4E0B\u8F7D\u8C46\u5305\u5DE5\u4F5C",fontSize:14,onClick:i(()=>window.open(j.doubao.downloadUrl,"_blank","noopener,noreferrer"),"onClick")})):u.push(M({icon:"efficiency",label:"\u4E86\u89E3\u5999\u642D",fontSize:14,onClick:i(()=>window.open(j.miaoda.landingUrl,"_blank","noopener,noreferrer"),"onClick")})),_e&&u.push(M({icon:"feedback",label:"\u6295\u8BC9\u4E0E\u4E3E\u62A5",fontSize:14,onClick:Ce}));let p=Se({items:u,minWidth:160,itemGap:8});p.style.display="none";let m=ke(n,"desktop",()=>e.remove()),g=m.querySelector("[data-watermark-close]");o.append(p,m);let v=null;return o.addEventListener("mouseenter",()=>{v&&clearTimeout(v),p.style.display="flex",g&&(g.style.display="inline-flex")}),o.addEventListener("mouseleave",()=>{v=setTimeout(()=>{p.style.display="none",g&&(g.style.display="none")},100)}),e}i(st,"buildDesktopWatermark");function ct(n){let{host:e,container:o}=Ee(n,!0);o.style.cursor="pointer";let u=[];n==="miaoda"&&u.push(M({icon:"efficiency",label:"\u4E86\u89E3\u5999\u642D",fontSize:16,onClick:i(()=>window.open(j.miaoda.landingUrl,"_blank","noopener,noreferrer"),"onClick")})),_e&&u.push(M({icon:"feedback",label:"\u6295\u8BC9\u4E0E\u4E3E\u62A5",fontSize:16,onClick:Ce}));let p=[M({icon:"close",label:"\u4E0D\u518D\u5C55\u793A",fontSize:16,onClick:i(w=>{w.stopPropagation(),document.removeEventListener("click",v),e.remove()},"onClick")})],m=Se({items:u,extraItems:p,minWidth:160});m.style.display="none";let g=ke(n,"mobile");o.append(m,g),o.addEventListener("click",w=>{w.stopPropagation(),m.style.display=m.style.display==="none"?"flex":"none"});let v=i(()=>{m.style.display="none"},"onOutsideClick");return document.addEventListener("click",v),e}i(ct,"buildMobileWatermark");var be=!1,Z=!1;async function Le(n){if(be||Z||typeof document=="undefined")return;if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",()=>Le(n),{once:!0});return}Z=!0;let e=await ae();if(be=!0,Z=!1,!e)return;let o=W()?ct(n):st(n);document.body.appendChild(o)}i(Le,"mountWatermark");function Ie(){return Le("doubao")}i(Ie,"mountDoubaoWatermark");var lt="0.0.1",dt="@lark-apaas/miaoda-coding-sdk";oe()&&(ue(),ve());Ie();return He(ut);})();
+</script><meta property="og:title" content="ticket-generator"><meta property="og:image" content="https://lf3-static.bytednsdoc.com/obj/eden-cn/ylcylz_fsph_ryhs/ljhwZthlaukjlkulzlp/feisuda/avatar/4.svg"><link rel="icon" href="https://lf3-static.bytednsdoc.com/obj/eden-cn/ylcylz_fsph_ryhs/ljhwZthlaukjlkulzlp/feisuda/avatar/4.svg">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>约稿小票生成器【渐变装饰版】</title>
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+    <style>
+        * { box-sizing: border-box; margin:0; padding:0; }
+        body { background:#f5f5f5; padding:12px; }
+        .container { max-width:1150px; margin:0 auto; display:grid; grid-template-columns:1fr; gap:16px; }
+        @media(min-width:768px){ .container{ grid-template-columns: 440px 1fr; gap:24px; } }
+        .form-panel { background:#fff; padding:16px; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.06); }
+        .ticket-panel { background:#fff; padding:16px; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.06); }
+        .form-item { margin-bottom:12px; }
+        label { display:block; margin-bottom:4px; font-size:14px; color:#333; }
+        input,textarea,select { width:100%; padding:10px 12px; border:1px solid #ddd; border-radius:6px; font-size:15px; }
+        textarea { min-height:70px; resize:vertical; }
+        .color-input { width:60px; height:36px; padding:0; border:none; cursor:pointer; border-radius:6px; }
+        .row-block { margin:16px 0; padding-bottom:14px; border-bottom:1px dashed #ddd; }
+        .list-row { display:flex; gap:8px; margin-bottom:8px; }
+        .list-row input { flex:1; }
+        button { padding:10px 16px; border:none; border-radius:6px; cursor:pointer; color:#fff; font-size:14px; }
+        .btn-add { background:#409eff; }
+        .btn-calc { background:#67c23a; }
+        .btn-save { background:#e6a23c; }
+        .btn-copy { background:#9b59b6; }
+        .btn-reset { background:#e74c3c; }
+        .switch-row { display:flex; gap:12px; flex-wrap:wrap; margin:8px 0; }
+        .switch-row label { display:inline-flex; align-items:center; gap:4px; font-size:13px; }
+        .tip-box { background:#fff8e1; border:1px solid #ffe082; border-radius:8px; padding:10px 12px; font-size:12px; color:#8d6e00; margin-bottom:12px; line-height:1.6; }
+        @media (max-width:600px){
+            body { padding:8px; }
+            .container { gap:12px; }
+            .form-panel, .ticket-panel { padding:12px; }
+            .list-row{ flex-wrap:wrap; gap:6px; }
+            .list-row input{ flex:1 1 40%; padding:8px; }
+            .list-row button{ flex:1 1 100%; padding:8px; }
+            button { width:100%; margin-bottom:6px; }
+        }
+
+        .ticket {
+            margin:0 auto;
+            background:#fff;
+            border-radius:10px;
+            overflow:hidden;
+            padding:0;
+        }
+        .decor-bar {
+            height:25px;
+            position:relative;
+            display:block;
+            overflow:hidden;
+        }
+        .ticket-body { padding:14px 20px; }
+        .ticket-title { text-align:center; font-size:30px; font-weight:bold; margin-bottom:4px; }
+        .ticket-subtitle { text-align:center; font-size:12px; letter-spacing:1px; margin-bottom:12px; }
+        .divider { border-bottom:1px solid #000; margin:8px 0; }
+        .dashed-divider { border-bottom:1px dashed #000; margin:6px 0; }
+        .info-line { margin:5px 0; font-size:14px; }
+        table { width:100%; border-collapse:collapse; margin:6px 0; table-layout:fixed; }
+        table th, table td { padding:4px 2px; overflow:hidden; white-space:nowrap; font-size:13px; }
+        table th:nth-child(1), table td:nth-child(1){ width:25%; text-align:left; }
+        table th:nth-child(2), table td:nth-child(2){ width:25%; text-align:right; }
+        table th:nth-child(3), table td:nth-child(3){ width:25%; text-align:right; }
+        table th:nth-child(4), table td:nth-child(4){ width:25%; text-align:right; }
+        .note-block { margin:8px 0; font-size:13px; }
+
+        .qr-row { display:flex; justify-content:center; gap:16px; margin:12px 0 8px; }
+        .qr-box { display:flex; flex-direction:column; align-items:center; gap:4px; }
+        .qr-square { width:76px; height:76px; border:1px solid #999; border-radius:6px; display:flex; align-items:center; justify-content:center; background:#fff; overflow:hidden; font-size:11px; color:#999; }
+        .qr-square img { width:100%; height:100%; object-fit:cover; display:block; }
+        .qr-circle { width:76px; height:76px; border:1px solid #999; border-radius:50%; display:flex; align-items:center; justify-content:center; background:#fff; overflow:hidden; font-size:11px; color:#999; }
+        .qr-circle img { width:100%; height:100%; object-fit:cover; display:block; }
+        .qr-label { font-size:11px; color:#666; }
+
+        .thanks-box {
+            text-align:center;
+            font-size:18px;
+            padding:5px 16px;
+            margin:6px auto 10px auto;
+            border-radius:999px;
+            width:fit-content;
+        }
+        .thanks-sub { text-align:center; font-size:11px; margin-top:2px; margin-bottom:6px; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="form-panel">
+        <h3>订单配置</h3>
+        <div class="tip-box">
+            💡 使用提示：<br>
+            1. 在左侧填写订单信息、添加项目、上传收款码<br>
+            2. 右侧实时预览小票效果<br>
+            3. 点击"导出图片"保存小票为PNG<br>
+            4. 微信/QQ内导出后请长按图片保存到相册
+        </div>
+        <div class="form-item">
+            <label>店铺名称</label>
+            <input type="text" id="shopName" value="SNOWの衣柜小铺">
+        </div>
+        <div class="form-item">
+            <label>店铺英文副标题</label>
+            <input type="text" id="shopSubTitle" value="· EXCLUSIVE CONSUMPTION RECEIPT ·">
+        </div>
+        <div class="form-item">
+            <label>下单人</label>
+            <input type="text" id="buyerName" placeholder="填写下单人">
+        </div>
+        <div class="form-item">
+            <label>订单编号</label>
+            <input type="text" id="orderId" value="">
+        </div>
+        <div class="form-item">
+            <label>订单时间</label>
+            <input type="text" id="orderTime" value="">
+        </div>
+
+        <div class="row-block">
+            <h4>小票样式</h4>
+            <div class="form-item">
+                <label>小票背景颜色</label>
+                <input type="color" class="color-input" id="bgColor" value="#ffffff" oninput="updateTicketStyle()">
+            </div>
+            <div class="form-item">
+                <label>正文文字颜色</label>
+                <input type="color" class="color-input" id="textColor" value="#000000" oninput="updateTicketStyle()">
+            </div>
+            <div class="form-item">
+                <label>标题文字颜色</label>
+                <input type="color" class="color-input" id="titleColor" value="#000000" oninput="updateTicketStyle()">
+            </div>
+            <div class="form-item">
+                <label>顶部装饰栏颜色</label>
+                <input type="color" class="color-input" id="topDecorColor" value="#f8b8d4" oninput="updateTicketStyle()">
+            </div>
+            <div class="form-item">
+                <label>底部装饰栏颜色</label>
+                <input type="color" class="color-input" id="bottomDecorColor" value="#b8c8f8" oninput="updateTicketStyle()">
+            </div>
+            <div class="form-item">
+                <label>小票字体</label>
+                <select id="fontSelect" onchange="updateTicketStyle()">
+                    <option value="serif">宋体</option>
+                    <option value="SimHei">黑体</option>
+                    <option value="Microsoft YaHei">微软雅黑</option>
+                    <option value="KaiTi">楷体</option>
+                </select>
+            </div>
+            <div class="form-item">
+                <label>小票宽度(px)</label>
+                <input type="number" id="ticketWidth" value="340" oninput="updateTicketStyle()">
+            </div>
+        </div>
+
+        <div class="row-block">
+            <h4>收款码上传与显示开关</h4>
+            <div class="switch-row">
+                <label><input type="checkbox" id="showAlipay" onchange="calcAll()"> 支付宝</label>
+                <label><input type="checkbox" id="showReward" onchange="calcAll()"> 赞赏码(圆)</label>
+                <label><input type="checkbox" id="showWechat" onchange="calcAll()"> 微信</label>
+            </div>
+            <div class="form-item">
+                <label>支付宝二维码（正方形）</label>
+                <input type="file" id="alipayImg" accept="image/*" onchange="loadQR('alipayImg','t_alipay')">
+            </div>
+            <div class="form-item">
+                <label>微信赞赏码（圆形）</label>
+                <input type="file" id="rewardImg" accept="image/*" onchange="loadQR('rewardImg','t_reward')">
+            </div>
+            <div class="form-item">
+                <label>微信二维码（正方形）</label>
+                <input type="file" id="wechatImg" accept="image/*" onchange="loadQR('wechatImg','t_wechat')">
+            </div>
+        </div>
+
+        <div class="row-block">
+            <h4>主项目列表</h4>
+            <div id="goodsBox"></div>
+            <button class="btn-add" onclick="addGoods()">+ 添加项目</button>
+        </div>
+
+        <div class="row-block">
+            <h4>附加项目</h4>
+            <div id="extraBox"></div>
+            <button class="btn-add" onclick="addExtra()">+ 添加附加项目</button>
+        </div>
+
+        <div class="row-block">
+            <h4>备注</h4>
+            <textarea id="remark" placeholder="填写订单备注"></textarea>
+        </div>
+
+        <div class="row-block">
+            <h4>金额设置</h4>
+            <div class="form-item">
+                <label>优惠金额（无优惠填0）</label>
+                <input type="number" id="discountMoney" value="0">
+            </div>
+        </div>
+
+        <div class="row-block">
+            <h4>底部文字</h4>
+            <div class="form-item">
+                <label>底部大文字</label>
+                <input type="text" id="footerMain" value="谢谢惠顾">
+            </div>
+            <div class="form-item">
+                <label>底部小英文</label>
+                <input type="text" id="footerSub" value="HAVE A NICE DAY">
+            </div>
+        </div>
+
+        <button class="btn-calc" onclick="calcAll()">计算全部价格</button>
+        <button class="btn-copy" style="margin-left:8px" onclick="copyTicketText()">复制文本</button>
+        <button class="btn-save" style="margin-left:8px" onclick="saveTicketImg()">导出图片</button>
+        <button class="btn-reset" style="margin-left:8px;margin-top:8px" onclick="resetAll()">清空全部</button>
+    </div>
+
+    <div class="ticket-panel">
+        <h3>小票预览</h3>
+        <div id="ticketDom" class="ticket">
+            <div class="decor-bar" id="topDecor"></div>
+            <div class="ticket-body">
+                <div class="ticket-title">SNOWの衣柜小铺</div>
+                <div class="ticket-subtitle">· EXCLUSIVE CONSUMPTION RECEIPT ·</div>
+                <div class="divider"></div>
+                <div class="info-line">下单人：<span id="t_buyerName"></span></div>
+                <div class="info-line">订单编号：<span id="t_orderId"></span></div>
+                <div class="info-line">订单时间：<span id="t_orderTime"></span></div>
+                <div class="divider"></div>
+
+                <table>
+                    <colgroup><col><col><col><col></colgroup>
+                    <thead><tr><th>项目</th><th>单价</th><th>数量</th><th>小计</th></tr></thead>
+                    <tbody id="t_goods"></tbody>
+                </table>
+                <div class="dashed-divider"></div>
+
+                <table>
+                    <colgroup><col><col><col><col></colgroup>
+                    <thead><tr><th>附加项目</th><th>单价</th><th>数量</th><th>小计</th></tr></thead>
+                    <tbody id="t_extra"></tbody>
+                </table>
+                <div class="divider"></div>
+
+                <div class="note-block">备注:<span id="t_remark"></span></div>
+                <div class="info-line">应收金额:<span id="t_receiveTotal"></span></div>
+                <div class="info-line">优惠:<span id="t_discountMoney"></span></div>
+                <div class="info-line"><strong>实付金额:<span id="t_realPay"></span></strong></div>
+
+                <div class="qr-row">
+                    <div class="qr-box" id="box_alipay">
+                        <div class="qr-square" id="t_alipay"><span>支付宝</span></div>
+                        <div class="qr-label">支付宝</div>
+                    </div>
+                    <div class="qr-box" id="box_reward">
+                        <div class="qr-circle" id="t_reward"><span>赞赏码</span></div>
+                        <div class="qr-label">赞赏码</div>
+                    </div>
+                    <div class="qr-box" id="box_wechat">
+                        <div class="qr-square" id="t_wechat"><span>微信</span></div>
+                        <div class="qr-label">微信</div>
+                    </div>
+                </div>
+
+                <div class="thanks-box" id="thanksBox">谢谢惠顾</div>
+                <div class="thanks-sub" id="thanksSub">HAVE A NICE DAY</div>
+            </div>
+            <div class="decor-bar" id="bottomDecor"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+const STORAGE_KEY = "receipt_save_data";
+
+let qrData = { alipay: "", reward: "", wechat: "" };
+let qrShow = { alipay: false, reward: false, wechat: false };
+
+let goodsList = [
+    {name:"素材",price:0.2,num:35},
+    {name:"加框",price:0.1,num:20},
+    {name:"加字",price:0.1,num:20},
+    {name:"异形卡面",price:1,num:5},
+    {name:"存档",price:3,num:1},
+    {name:"模板费",price:3,num:1}
+];
+let extraList = [
+    {name:"加急",price:10,num:1},
+    {name:"双页",price:5,num:1},
+    {name:"大改",price:10,num:1}
+];
+
+function loadLocalData(){
+    const str = localStorage.getItem(STORAGE_KEY);
+    if(!str) return;
+    try{
+        const data = JSON.parse(str);
+        document.getElementById("shopName").value = data.shopName;
+        document.getElementById("shopSubTitle").value = data.shopSubTitle;
+        document.getElementById("buyerName").value = data.buyerName;
+        document.getElementById("orderId").value = data.orderId;
+        document.getElementById("orderTime").value = data.orderTime;
+        document.getElementById("bgColor").value = data.bgColor;
+        document.getElementById("textColor").value = data.textColor;
+        document.getElementById("titleColor").value = data.titleColor;
+        document.getElementById("topDecorColor").value = data.topDecorColor || "#f8b8d4";
+        document.getElementById("bottomDecorColor").value = data.bottomDecorColor || "#b8c8f8";
+        document.getElementById("fontSelect").value = data.fontSelect;
+        document.getElementById("ticketWidth").value = data.ticketWidth;
+        document.getElementById("remark").value = data.remark;
+        document.getElementById("discountMoney").value = data.discountMoney;
+        document.getElementById("footerMain").value = data.footerMain;
+        document.getElementById("footerSub").value = data.footerSub;
+        goodsList = data.goodsList;
+        extraList = data.extraList;
+        qrData.alipay = data.qrData?.alipay || "";
+        qrData.reward = data.qrData?.reward || "";
+        qrData.wechat = data.qrData?.wechat || "";
+        qrShow.alipay = data.qrShow?.alipay || false;
+        qrShow.reward = data.qrShow?.reward || false;
+        qrShow.wechat = data.qrShow?.wechat || false;
+        document.getElementById("showAlipay").checked = qrShow.alipay;
+        document.getElementById("showReward").checked = qrShow.reward;
+        document.getElementById("showWechat").checked = qrShow.wechat;
+    }catch(e){}
+}
+
+function saveLocalData(){
+    qrShow.alipay = document.getElementById("showAlipay").checked;
+    qrShow.reward = document.getElementById("showReward").checked;
+    qrShow.wechat = document.getElementById("showWechat").checked;
+    const data = {
+        shopName:document.getElementById("shopName").value,
+        shopSubTitle:document.getElementById("shopSubTitle").value,
+        buyerName:document.getElementById("buyerName").value,
+        orderId:document.getElementById("orderId").value,
+        orderTime:document.getElementById("orderTime").value,
+        bgColor:document.getElementById("bgColor").value,
+        textColor:document.getElementById("textColor").value,
+        titleColor:document.getElementById("titleColor").value,
+        topDecorColor:document.getElementById("topDecorColor").value,
+        bottomDecorColor:document.getElementById("bottomDecorColor").value,
+        fontSelect:document.getElementById("fontSelect").value,
+        ticketWidth:document.getElementById("ticketWidth").value,
+        remark:document.getElementById("remark").value,
+        discountMoney:document.getElementById("discountMoney").value,
+        footerMain:document.getElementById("footerMain").value,
+        footerSub:document.getElementById("footerSub").value,
+        goodsList:goodsList,
+        extraList:extraList,
+        qrData: qrData,
+        qrShow: qrShow
+    };
+    localStorage.setItem(STORAGE_KEY,JSON.stringify(data));
+}
+
+function hexToRgb(hex){
+    hex = hex.replace("#","");
+    if(hex.length === 3) hex = hex.split("").map(c=>c+c).join("");
+    return {
+        r: parseInt(hex.slice(0,2),16),
+        g: parseInt(hex.slice(2,4),16),
+        b: parseInt(hex.slice(4,6),16)
+    };
+}
+function rgbStr(r,g,b){ return `rgb(${Math.round(r)},${Math.round(g)},${Math.round(b)})`; }
+function lighten(hex, amt){
+    const {r,g,b} = hexToRgb(hex);
+    // 只向白色提亮，不往深色走，避免脏色
+    const nr = Math.min(255, r + (255 - r) * amt / 100);
+    const ng = Math.min(255, g + (255 - g) * amt / 100);
+    const nb = Math.min(255, b + (255 - b) * amt / 100);
+    return rgbStr(nr, ng, nb);
+}
+
+function updateTicketStyle(){
+    const bg = document.getElementById("bgColor").value;
+    const text = document.getElementById("textColor").value;
+    const title = document.getElementById("titleColor").value;
+    const font = document.getElementById("fontSelect").value;
+    const width = document.getElementById("ticketWidth").value;
+    const topC = document.getElementById("topDecorColor").value;
+    const botC = document.getElementById("bottomDecorColor").value;
+
+    const ticketDom = document.getElementById("ticketDom");
+    ticketDom.style.backgroundColor = bg;
+    ticketDom.style.color = text;
+    ticketDom.style.fontFamily = font;
+    ticketDom.style.width = width + "px";
+
+    // 顶栏上深下浅，底栏上浅下深（同色系，不出现黑灰）
+    const topDecor = document.getElementById("topDecor");
+    const botDecor = document.getElementById("bottomDecor");
+    topDecor.style.background = `linear-gradient(180deg, ${topC}, ${lighten(topC, 35)}, ${lighten(topC, 60)})`;
+    botDecor.style.background = `linear-gradient(180deg, ${lighten(botC, 60)}, ${lighten(botC, 35)}, ${botC})`;
+
+    ticketDom.querySelector(".ticket-title").style.color = title;
+    ticketDom.querySelector(".ticket-subtitle").style.color = title;
+    ticketDom.querySelectorAll(".divider").forEach(el=>{ el.style.borderColor = text; });
+    ticketDom.querySelector(".dashed-divider").style.borderColor = text;
+
+    const thanksBox = document.getElementById("thanksBox");
+    thanksBox.style.background = `linear-gradient(90deg, ${lighten(topC, 80)}, ${lighten(botC, 80)})`;
+    thanksBox.style.color = title;
+
+    saveLocalData();
+}
+
+function renderGoodsForm(){
+    const box = document.getElementById("goodsBox");
+    box.innerHTML = "";
+    goodsList.forEach((item,idx)=>{
+        const div = document.createElement("div");
+        div.className="list-row";
+        div.innerHTML = `
+            <input placeholder="项目名称" value="${item.name}" oninput="goodsList[${idx}].name=this.value;saveLocalData()">
+            <input type="number" placeholder="单价" value="${item.price}" oninput="goodsList[${idx}].price=Number(this.value);saveLocalData()">
+            <input type="number" placeholder="数量" value="${item.num}" oninput="goodsList[${idx}].num=Number(this.value);saveLocalData()">
+            <button onclick="delGoods(${idx})">删</button>
+        `;
+        box.appendChild(div);
+    });
+}
+function renderExtraForm(){
+    const box = document.getElementById("extraBox");
+    box.innerHTML = "";
+    extraList.forEach((item,idx)=>{
+        const div = document.createElement("div");
+        div.className="list-row";
+        div.innerHTML = `
+            <input placeholder="附加项目" value="${item.name}" oninput="extraList[${idx}].name=this.value;saveLocalData()">
+            <input type="number" placeholder="单价" value="${item.price}" oninput="extraList[${idx}].price=Number(this.value);saveLocalData()">
+            <input type="number" placeholder="数量" value="${item.num}" oninput="extraList[${idx}].num=Number(this.value);saveLocalData()">
+            <button onclick="delExtra(${idx})">删</button>
+        `;
+        box.appendChild(div);
+    });
+}
+
+function addGoods(){ goodsList.push({name:"",price:0,num:0}); renderGoodsForm(); saveLocalData(); }
+function delGoods(i){ goodsList.splice(i,1); renderGoodsForm(); saveLocalData(); }
+function addExtra(){ extraList.push({name:"",price:0,num:0}); renderExtraForm(); saveLocalData(); }
+function delExtra(i){ extraList.splice(i,1); renderExtraForm(); saveLocalData(); }
+
+function loadQR(inputId, targetId) {
+    const file = document.getElementById(inputId).files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = function (e) {
+        const base64 = e.target.result;
+        if (inputId === "alipayImg") { qrData.alipay = base64; renderQR("t_alipay", base64, "square"); }
+        else if (inputId === "rewardImg") { qrData.reward = base64; renderQR("t_reward", base64, "circle"); }
+        else if (inputId === "wechatImg") { qrData.wechat = base64; renderQR("t_wechat", base64, "square"); }
+        saveLocalData();
+        calcAll();
+    };
+    reader.readAsDataURL(file);
+}
+function renderQR(targetId, base64, type) {
+    const box = document.getElementById(targetId);
+    if (!base64) { box.innerHTML = type === "circle" ? "<span>赞赏码</span>" : "<span>二维码</span>"; return; }
+    box.innerHTML = `<img src="${base64}">`;
+}
+
+function calcAll(){
+    const shopName = document.getElementById("shopName").value;
+    const shopSubTitle = document.getElementById("shopSubTitle").value;
+    const buyerName = document.getElementById("buyerName").value;
+    const orderId = document.getElementById("orderId").value;
+    const orderTime = document.getElementById("orderTime").value;
+    const remark = document.getElementById("remark").value;
+    const discountMoney = Number(document.getElementById("discountMoney").value)||0;
+    const footerMain = document.getElementById("footerMain").value;
+    const footerSub = document.getElementById("footerSub").value;
+
+    let goodsSum = 0;
+    goodsList.forEach(g=>{ g.sub = Number(g.price)*Number(g.num); goodsSum += g.sub; });
+    let extraSum =0;
+    extraList.forEach(e=>{ e.sub = Number(e.price)*Number(e.num); extraSum += e.sub; });
+    const receiveTotal = goodsSum + extraSum;
+    const realPay = receiveTotal - discountMoney;
+
+    document.querySelector(".ticket-title").innerText = shopName;
+    document.querySelector(".ticket-subtitle").innerText = shopSubTitle;
+    document.getElementById("t_buyerName").innerText = buyerName;
+    document.getElementById("t_orderId").innerText = orderId;
+    document.getElementById("t_orderTime").innerText = orderTime;
+    document.getElementById("t_remark").innerText = remark;
+    document.getElementById("thanksBox").innerText = footerMain;
+    document.getElementById("thanksSub").innerText = footerSub;
+
+    const tGoods = document.getElementById("t_goods");
+    tGoods.innerHTML = "";
+    goodsList.forEach(g=>{
+        const tr = document.createElement("tr");
+        tr.innerHTML = `<td>${g.name}</td><td>${g.price}</td><td>${g.num}</td><td>${g.sub.toFixed(2)}</td>`;
+        tGoods.appendChild(tr);
+    });
+    const tExtra = document.getElementById("t_extra");
+    tExtra.innerHTML = "";
+    extraList.forEach(e=>{
+        const tr = document.createElement("tr");
+        tr.innerHTML = `<td>${e.name}</td><td>${e.price}</td><td>${e.num}</td><td>${e.sub.toFixed(2)}</td>`;
+        tExtra.appendChild(tr);
+    });
+
+    document.getElementById("t_receiveTotal").innerText = receiveTotal.toFixed(2);
+    document.getElementById("t_discountMoney").innerText = discountMoney.toFixed(2);
+    document.getElementById("t_realPay").innerText = realPay.toFixed(2);
+
+    document.getElementById("box_alipay").style.display = document.getElementById("showAlipay").checked ? "flex" : "none";
+    document.getElementById("box_reward").style.display = document.getElementById("showReward").checked ? "flex" : "none";
+    document.getElementById("box_wechat").style.display = document.getElementById("showWechat").checked ? "flex" : "none";
+
+    saveLocalData();
+}
+
+function copyTicketText(){
+    const text = document.getElementById("ticketDom").innerText;
+    navigator.clipboard.writeText(text).then(()=>{ alert("小票文本已经复制到剪贴板！"); });
+}
+
+function saveTicketImg(){
+    html2canvas(document.getElementById("ticketDom"),{ useCORS:true, scale:2 }).then(canvas=>{
+        const link = document.createElement('a');
+        link.download = "订单小票.png";
+        link.href = canvas.toDataURL("image/png");
+        link.click();
+    });
+}
+
+function resetAll(){
+    localStorage.removeItem(STORAGE_KEY);
+    goodsList = []; extraList = [];
+    qrData = { alipay: "", reward: "", wechat: "" };
+    qrShow = { alipay: false, reward: false, wechat: false };
+    document.getElementById("shopName").value="";
+    document.getElementById("shopSubTitle").value="";
+    document.getElementById("buyerName").value="";
+    document.getElementById("orderId").value="";
+    document.getElementById("orderTime").value="";
+    document.getElementById("remark").value="";
+    document.getElementById("discountMoney").value=0;
+    document.getElementById("footerMain").value="谢谢惠顾";
+    document.getElementById("footerSub").value="HAVE A NICE DAY";
+    document.getElementById("showAlipay").checked = false;
+    document.getElementById("showReward").checked = false;
+    document.getElementById("showWechat").checked = false;
+    renderQR("t_alipay", "", "square");
+    renderQR("t_reward", "", "circle");
+    renderQR("t_wechat", "", "square");
+    renderGoodsForm();
+    renderExtraForm();
+    updateTicketStyle();
+    calcAll();
+}
+
+window.onload = function(){
+    loadLocalData();
+    renderGoodsForm();
+    renderExtraForm();
+    if (qrData.alipay) renderQR("t_alipay", qrData.alipay, "square");
+    if (qrData.reward) renderQR("t_reward", qrData.reward, "circle");
+    if (qrData.wechat) renderQR("t_wechat", qrData.wechat, "square");
+    updateTicketStyle();
+    calcAll();
+}
+</script>
+</body>
+</html>
